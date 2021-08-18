@@ -70,7 +70,7 @@ function validMinLen($str, $key, $min = 6){
   }
 }
 //バリデーション関数（最大文字数チェック）
-function validMaxLen($str, $key, $max = 256){
+function validMaxLen($str, $key, $max = 255){
   if(mb_strlen($str) > $max){
     global $err_msg;
     $err_msg[$key] = MSG06;
@@ -212,7 +212,7 @@ if(!empty($_POST)){
           <form action="" method="post" class="form">
             <h2 class="title">ユーザー登録</h2>
             <div class="area-msg">
-              <?php 
+              <?php
               if(!empty($err_msg['common'])) echo $err_msg['common'];
               ?>
             </div>
@@ -221,7 +221,7 @@ if(!empty($_POST)){
               <input type="text" name="email" value="<?php if(!empty($_POST['email'])) echo $_POST['email']; ?>">
             </label>
             <div class="area-msg">
-              <?php 
+              <?php
               if(!empty($err_msg['email'])) echo $err_msg['email'];
               ?>
             </div>
@@ -230,7 +230,7 @@ if(!empty($_POST)){
               <input type="password" name="pass" value="<?php if(!empty($_POST['pass'])) echo $_POST['pass']; ?>">
             </label>
             <div class="area-msg">
-              <?php 
+              <?php
               if(!empty($err_msg['pass'])) echo $err_msg['pass'];
               ?>
             </div>
@@ -239,7 +239,7 @@ if(!empty($_POST)){
               <input type="password" name="pass_re" value="<?php if(!empty($_POST['pass_re'])) echo $_POST['pass_re']; ?>">
             </label>
             <div class="area-msg">
-              <?php 
+              <?php
               if(!empty($err_msg['pass_re'])) echo $err_msg['pass_re'];
               ?>
             </div>
